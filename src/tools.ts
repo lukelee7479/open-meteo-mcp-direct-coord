@@ -90,14 +90,6 @@ export const ENSEMBLE_FORECAST_TOOL: ToolDefinition = {
     'Get ensemble forecasts showing forecast uncertainty with multiple model runs. `models` is required: the ensemble API has no default model (e.g. "icon_seamless_eps", "ncep_gefs_seamless", "ecmwf_ifs025_ensemble").',
 };
 
-export const GEOCODING_TOOL: ToolDefinition = {
-  name: 'geocoding',
-  title: 'Geocoding',
-  annotations: READ_ONLY_ANNOTATIONS,
-  description:
-    'Search for locations worldwide by place name or postal code. Returns geographic coordinates (latitude and longitude) and detailed location information. Use this tool when you need to convert a location name (e.g., "Paris", "New York") into precise coordinates (latitude/longitude) that are required by other tools. This is essential when you have a location name but need coordinates for data fetching tools.',
-};
-
 export const DWD_ICON_FORECAST_TOOL: ToolDefinition = {
   name: 'dwd_icon_forecast',
   title: 'DWD ICON Forecast',
@@ -164,7 +156,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   SEASONAL_FORECAST_TOOL,
   CLIMATE_PROJECTION_TOOL,
   ENSEMBLE_FORECAST_TOOL,
-  GEOCODING_TOOL,
   DWD_ICON_FORECAST_TOOL,
   GFS_FORECAST_TOOL,
   METEOFRANCE_FORECAST_TOOL,
