@@ -28,7 +28,6 @@ import {
   ENSEMBLE_FORECAST_TOOL,
   FLOOD_FORECAST_TOOL,
   GEM_FORECAST_TOOL,
-  GEOCODING_TOOL,
   GFS_FORECAST_TOOL,
   JMA_FORECAST_TOOL,
   MARINE_WEATHER_TOOL,
@@ -61,8 +60,6 @@ import {
   ForecastParamsSchema,
   type GemParams,
   GemParamsSchema,
-  type GeocodingParams,
-  GeocodingParamsSchema,
   type GfsParams,
   GfsParamsSchema,
   type JmaParams,
@@ -249,12 +246,6 @@ export class OpenMeteoMCPServer {
       FLOOD_FORECAST_TOOL,
       FloodParamsSchema,
       (params: FloodParams, signal) => this.client.getFlood(params, signal),
-    );
-    this.registerReadOnlyTool(
-      server,
-      GEOCODING_TOOL,
-      GeocodingParamsSchema,
-      (params: GeocodingParams, signal) => this.client.getGeocoding(params, signal),
     );
     this.registerReadOnlyTool(
       server,
