@@ -7,7 +7,6 @@ import {
   ENSEMBLE_FORECAST_TOOL,
   FLOOD_FORECAST_TOOL,
   GEM_FORECAST_TOOL,
-  GEOCODING_TOOL,
   GFS_FORECAST_TOOL,
   JMA_FORECAST_TOOL,
   MARINE_WEATHER_TOOL,
@@ -39,7 +38,7 @@ const MODEL_TOOLS = [
 //
 // The date bounds and defaults below were checked against the live API; keep
 // them in step with it.
-export const SERVER_INSTRUCTIONS = `Open-Meteo weather data. Every data tool takes latitude/longitude: resolve place names with \`${GEOCODING_TOOL.name}\` first.
+export const SERVER_INSTRUCTIONS = `Open-Meteo weather data. Every data tool takes latitude/longitude. When the user provides a place name instead of coordinates, infer appropriate latitude/longitude for that location and call the relevant data tool directly.
 
 Choosing a tool:
 - Forecast up to 16 days: \`${WEATHER_FORECAST_TOOL.name}\`, which picks the best model for the location. The model-specific tools (${MODEL_TOOLS}) are for when a particular model is asked for, or to compare models with one call per model.
